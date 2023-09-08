@@ -30,7 +30,7 @@ namespace NLayer.Repository.Repositories
             return await _dbSet.AnyAsync(expression);
         }
 
-        public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)
+        public IQueryable<T> GetAll()
         {
             //as no tracking is written so that when we take data from db,
             //they will not be stored on memory. When data is taken, efcore tracks their state,

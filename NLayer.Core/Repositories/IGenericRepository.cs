@@ -5,7 +5,7 @@ namespace NLayer.Core.Repositories
     //code below means that T always must be a class
     public interface IGenericRepository<T> where T : class
     {
-        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
+        IQueryable<T> GetAll();
         Task<T> GetByIdAsync(int id);
         //query method for T types that returns bool
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
