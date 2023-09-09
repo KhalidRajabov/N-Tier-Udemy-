@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using NLayer.Core.DTOs;
 using NLayer.Core.Models;
 using System;
@@ -15,8 +16,10 @@ namespace NLayer.Service.Mapping
         {
             CreateMap<Product, ProductDTO>().ReverseMap();
             CreateMap<Category, CategoryDTO>().ReverseMap();
+            CreateMap<Category, CategoryWithProductsDTO>();
             CreateMap<ProductFeature, ProductFeatureDTO>().ReverseMap();
             CreateMap<ProductUpdateDTO, Product>();
+            CreateMap<Product,ProductWithCategoryDTO>();
         }
     }
 }
