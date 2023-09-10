@@ -2,6 +2,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLayer.API.Filter;
+using NLayer.API.Middlewares;
 using NLayer.Core.Repositories;
 using NLayer.Core.Services;
 using NLayer.Core.UnitOfWorks;
@@ -60,6 +61,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+app.UserCustomException();
+//because app.UserCustomException(); is an error or an exception, it must be on top of these:
+//app.UseAuthorization(); app.MapControllers(); app.Run(); ___________ and so on
+
 
 app.UseAuthorization();
 
