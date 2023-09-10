@@ -20,6 +20,9 @@ namespace NLayer.API.Middlewares
                         //returns 400 if error type is made by ClientSideException class. It is like "If => return"
                         ClientSideException => 400,
 
+                        //returns 404 if error type is made by NotFoundException class. It is like "If => return"
+                        NotFoundException => 404,
+
                         //returns 500 if error type is not ClientSideException. It is like "Else => return"
                         _ => 500
                     } ;
